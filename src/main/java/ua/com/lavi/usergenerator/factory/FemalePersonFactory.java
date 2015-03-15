@@ -1,7 +1,7 @@
 package ua.com.lavi.usergenerator.factory;
 
-import ua.com.lavi.usergenerator.DataLoader;
 import ua.com.lavi.usergenerator.Person;
+import ua.com.lavi.usergenerator.utils.DataLoader;
 
 import java.util.ArrayList;
 import java.util.List;

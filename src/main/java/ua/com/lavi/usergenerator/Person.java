@@ -1,5 +1,8 @@
 package ua.com.lavi.usergenerator;
 
+import ua.com.lavi.usergenerator.utils.PasswordGenerator;
+import ua.com.lavi.usergenerator.utils.Transliterator;
+
 public class Person{
 
 	private String name;
@@ -32,6 +35,15 @@ public class Person{
 
     public String getFullname() {
         return lastname + " " + name + " " + patronomyc;
+    }
+
+    public String getUsername() {
+        String fullName = getFullname();
+        return Transliterator.transliterate(fullName.replace(" ", "_").toLowerCase());
+    }
+
+    public String getPassword() {
+        return PasswordGenerator.generatePassword();
     }
 
     @Override

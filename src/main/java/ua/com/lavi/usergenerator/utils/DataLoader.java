@@ -1,4 +1,4 @@
-package ua.com.lavi.usergenerator;
+package ua.com.lavi.usergenerator.utils;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.StreamException;
