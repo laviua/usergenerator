@@ -1,4 +1,5 @@
 language: java
+archive: true
 
 jdk:
    - openjdk7
