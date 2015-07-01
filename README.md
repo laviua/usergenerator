@@ -1,7 +1,7 @@
 Usergenerator
 =============
 
-Generator of the russian names
+Russian name generator
 This library contains XML files with popular names, lastnames and patronymic of russian men and women.
 For filling databases or other mock objects.
 
