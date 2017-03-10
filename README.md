@@ -1,4 +1,4 @@
-Fake User generator
+Fake User generator [![Build Status](https://travis-ci.org/laviua/usergenerator.svg?branch=master)](https://travis-ci.org/laviua/usergenerator)
 =============
 
 Russian name generator
