@@ -1,0 +1,20 @@
+# Common git ignore for platform folder
+
+# IntelliJ
+**/.idea/
+**/*.eml
+**/*.iml
+**/*.iws
+**/*.ipr
+classes/
+
+# Gradle
+.gradle/
+**/build/
+**/gradle/wrapper/**
+**/gradlew*
+
+
+# Common ignores
+*.log
+*.pdf
