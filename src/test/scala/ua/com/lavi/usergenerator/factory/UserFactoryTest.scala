@@ -2,14 +2,34 @@ import org.junit.{Assert, Test}
 import ua.com.lavi.usergenerator.factory.{FemaleUserFactory, MaleUserFactory}
 
 /**
- * Created by Oleksandr Loushkin on 27.03.17.
- */
+  * Created by Oleksandr Loushkin on 27.03.17.
+  */
 
 @Test
 class UserFactoryTest {
 
-    val femaleUserFactory: FemaleUserFactory = new FemaleUserFactory()
-    val maleUserFactory: MaleUserFactory = new MaleUserFactory()
+  val femaleUserFactory: FemaleUserFactory = new FemaleUserFactory()
+  val maleUserFactory: MaleUserFactory = new MaleUserFactory()
+
+  import org.junit.Test
+
+  @Test
+  def testLastname() {
+    Assert.assertTrue(!femaleUserFactory.getLastname.isEmpty)
+    Assert.assertTrue(!maleUserFactory.getLastname.isEmpty)
+  }
+
+  @Test
+  def testName() {
+    Assert.assertTrue(!femaleUserFactory.getName.isEmpty)
+    Assert.assertTrue(!maleUserFactory.getName.isEmpty)
+  }
+
+  @Test
+  def testPatronomyc() {
+    Assert.assertTrue(!femaleUserFactory.getPatronomyc.isEmpty)
+    Assert.assertTrue(!maleUserFactory.getPatronomyc.isEmpty)
+  }
 
   @Test
   def testUser() {
@@ -26,4 +46,8 @@ class UserFactoryTest {
 
   }
 
+  @Test
+  def testUsersCollection() {
+    Assert.assertTrue(femaleUserFactory.getUsers(10).size == 10)
+  }
 }

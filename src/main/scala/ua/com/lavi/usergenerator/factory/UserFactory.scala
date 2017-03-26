@@ -3,6 +3,7 @@ package ua.com.lavi.usergenerator.factory
 import ua.com.lavi.usergenerator.FakeUser
 import ua.com.lavi.usergenerator.utils.{PasswordGenerator, Transliterator}
 
+import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 import scala.util.Random
 
@@ -27,7 +28,7 @@ abstract class UserFactory {
     val name: String = getName()
     val patronomyc: String = getPatronomyc()
 
-    val fullname = lastname + " " + name  + " " + patronomyc
+    val fullname = s"$lastname $name $patronomyc"
     val username = transliterator.transliterate(fullname.replace(" ", "_").toLowerCase())
     val password = passwordGenerator.generatePassword()
     val fakeUser = FakeUser(
@@ -41,12 +42,21 @@ abstract class UserFactory {
     fakeUser
   }
 
-  protected def readResourceLines(filename: String): List[String] = {
-    Source.fromResource(filename).getLines().toList
+  protected def readResourceLines(filename: String): Seq[String] = {
+    Source.fromResource(filename).getLines().toSeq
   }
 
-  def randomStringFromList(list: List[String]): String = {
+  def randomStringFromList(list: Seq[String]): String = {
     list(new Random().nextInt(list.size))
+  }
+
+  def getUsers(count: Int): Seq[FakeUser] = {
+    val fakeUsers:ArrayBuffer[FakeUser] = ArrayBuffer()
+    for (_ <- 0 until count) {
+      fakeUsers.append(getUser())
+    }
+
+    fakeUsers
   }
 
 }

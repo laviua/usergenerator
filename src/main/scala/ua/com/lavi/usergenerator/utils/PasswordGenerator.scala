@@ -10,6 +10,7 @@ import scala.util.Random
 class PasswordGenerator {
 
     private val DEFAULT_PASSWORD_LENGTH = 8
+    private val random = new Random
 
 
     def generatePassword(): String = {
@@ -17,9 +18,9 @@ class PasswordGenerator {
     }
 
     def generatePassword(length: Int): String = {
-        val random = new Random
+
         val sb = new StringBuilder
-        for (i <- 1 to length) {
+        for (_ <- 1 to length) {
             sb.append(random.nextPrintableChar)
         }
         sb.toString
